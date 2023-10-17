@@ -1,24 +1,18 @@
-from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-
-
-class MainPageLocators:
-    LOCATOR_HOW_MUCH_DOES_IT_COST = (By.XPATH, '//div[@id="accordion__heading-0"]')
-    LOCATOR_HOW_MUCH_DOES_IT_COST_TEXT = (By.XPATH, '//p[text()="Сутки — 400 рублей. Оплата курьеру — наличными или картой."]')
-    LOCATOR_LOGO = (By.XPATH, '//a[@class="Header_LogoScooter__3lsAR"]')
+from locators import MainPageLocators
 
 
 class MainPage(BasePage):
-    def click_drop_down_list(self):
-        self.find_element(MainPageLocators.LOCATOR_HOW_MUCH_DOES_IT_COST).click()
+    def click_accordion_button(self, locator_button):
+        self.find_element(locator_button).click()
 
-    def check_element_text(self):
-        return self.find_element(MainPageLocators.LOCATOR_HOW_MUCH_DOES_IT_COST_TEXT).text
+    def check_accordion_text(self, locator_text):
+        accordion_text = self.find_element(locator_text).text
+        return accordion_text
 
     def click_on_logo(self):
         self.visibility_of_element_located(MainPageLocators.LOCATOR_LOGO).click()
 
-    def check_
 
 #
 # class MainPageLocators:    # Сколько это стоит? И как оплатить?
