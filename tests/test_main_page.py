@@ -39,3 +39,9 @@ class TestMainPage:
         main_page.click_accordion_button(locator_button)
         accordion_text = main_page.check_accordion_text(locator_text)
         assert accordion_text == text
+
+    def test_logo_yandex(self, driver):
+        main_page = MainPage(driver)
+        main_page.go_to_site('https://qa-scooter.praktikum-services.ru/')
+        main_page.click_on_logo_yandex()
+
