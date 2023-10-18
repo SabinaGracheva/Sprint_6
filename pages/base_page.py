@@ -9,7 +9,7 @@ class BasePage:
     def go_to_site(self, url):
         self.driver.get(url)
 
-    def presence_of_element_located(self, locator, time=10):
+    def presence_of_element_located(self, locator, time=3):
         return WebDriverWait(self.driver, time).until(
             EC.presence_of_element_located(locator))
 
@@ -24,7 +24,7 @@ class BasePage:
     def scroll_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def get_current_url(self):  #получить корректный урл
+    def get_current_url(self):
         return self.driver.current_url
 
     def switch_to_window(self, index_page):

@@ -1,3 +1,4 @@
+import allure
 import pytest
 from locators import MainPageLocators
 from pages.main_page import MainPage
@@ -5,6 +6,7 @@ from pages.order_page import OrderPage
 
 
 class TestOrderPage:
+    @allure.title('Оформление заказа через кнопку "Заказать"')
     @pytest.mark.parametrize('button_order',
                              [MainPageLocators.LOCATOR_BUTTON_ORDER_UP,
                               MainPageLocators.LOCATOR_BUTTON_ORDER_DOWN])

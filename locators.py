@@ -21,6 +21,9 @@ class MainPageLocators:
     LOCATOR_BUTTON_ORDER_UP = (By.CSS_SELECTOR, ".Header_Nav__AGCXC .Button_Button__ra12g:first-child")
     LOCATOR_BUTTON_ORDER_DOWN = (By.XPATH, '//button[contains(@class, "Button_Middle")]')
     LOCATOR_LOGO_YANDEX = (By.XPATH, '//a[@href="//yandex.ru"]')
+    LOCATOR_BUTTON_YANDEX_SEARCH = (By.XPATH, '//button[@class="dzen-search-arrow-common__button"]')
+    LOCATOR_LOGO_SCOOTER = (By.XPATH, '//a[@class="Header_LogoScooter__3lsAR"]')
+    LOCATOR_SCOOTER = (By.XPATH, '//div[@class="Home_Header__iJKdX"]')
 
 
 class OrderPageLocators:
@@ -46,4 +49,3 @@ class OrderPageLocators:
     LOCATOR_BUTTON_ORDER = (By.XPATH, '//button[contains(@class, "Button_Middle")][2]')
     LOCATOR_BUTTON_YES = (By.CSS_SELECTOR, '.Order_Modal__YZ-d3 .Button_Button__ra12g:first-child + .Button_Button__ra12g')
     LOCATOR_ORDER_ISSUED = (By.XPATH, '//div[@class="Order_ModalHeader__3FDaJ"]')
-    LOCATOR_LOGO_SCOOTER = (By.XPATH, '//a[@class="Header_LogoScooter__3lsAR"]')

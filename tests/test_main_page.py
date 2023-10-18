@@ -1,8 +1,10 @@
+import allure
 import pytest
 from pages.main_page import MainPage, MainPageLocators
 
 
 class TestMainPage:
+    @allure.title('Проверка выпадающего списка "Вопросы о важном"')
     @pytest.mark.parametrize(
         'locator_button, locator_text, text',
         [
@@ -40,8 +42,17 @@ class TestMainPage:
         accordion_text = main_page.check_accordion_text(locator_text)
         assert accordion_text == text
 
+    @allure.title('Переход на Яндекс Дзен через логотип Яндекс')
     def test_logo_yandex(self, driver):
         main_page = MainPage(driver)
         main_page.go_to_site('https://qa-scooter.praktikum-services.ru/')
         main_page.click_on_logo_yandex()
+        current_url = main_page.check_to_yandex_page(1)
+        assert current_url == 'https://dzen.ru/?yredirect=true'
 
+    @allure.title('Переход на главную через логотип "Самокат"')
+    def test_logo_scooter(self, driver):
+        main_page = MainPage(driver)
+        main_page.go_to_site('https://qa-scooter.praktikum-services.ru/')
+        main_page.click_on_logo_scooter()
+        assert main_page.check_scooter()
